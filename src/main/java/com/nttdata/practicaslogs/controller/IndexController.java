@@ -31,7 +31,7 @@ public class IndexController {
 	public String consultaTemp() {
 		counterConsulta.increment();
 		logger.info("Se ha llamado a consulta "+counterConsulta.count()+" veces");
-		return "La temperatura en Farenheit es:"+temperatura;
+		return ""+temperatura.mensajeTemperatura();
 	}
 
 }
