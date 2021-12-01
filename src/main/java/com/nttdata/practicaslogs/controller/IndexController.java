@@ -44,7 +44,12 @@ public class IndexController {
 	public String consultaTemp(@RequestParam float tempe) {
 		counterConsulta.increment();
 		logger.info("Se ha llamado a consulta "+counterConsulta.count()+" veces");
-		return ""+temperatura.mensajeTemperatura();
+		if(gradoTest.equals("Celsius")) {
+			return ""+temperatura.mensajeTemperaturaCel(tempe);
+		} else {
+			return ""+temperatura.mensajeTemperaturaFar(tempe);
+		}
+		
 	}
 
 }
